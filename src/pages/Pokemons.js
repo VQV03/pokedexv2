@@ -36,10 +36,10 @@ export default function Pokemons() {
 
   function detectInputChange(input){
     updateSearch(input.target.value)
-    
+
     const query = allPokemons.filter(pokemon => search === pokemon.name)
 
-    if(query.length != 0){
+    if(query.length !== 0){
       updateList(query)
     }else{
       updateList(listCache)
@@ -59,7 +59,7 @@ export default function Pokemons() {
   }
 
   function loadPrevPage(){
-    if(prev.length != 0){
+    if(prev.length !== 0){
       api
       .get(prev)
       .then(response => {
@@ -84,8 +84,8 @@ export default function Pokemons() {
       </div>
 
       <div className='controllers'>
-          <button className='button' onClick={loadPrevPage}><img src={arrow_left} /></button>
-          <button className='button' onClick={loadNextPage}><img src={arrow_right} /></button>
+          <button className='button' onClick={loadPrevPage}><img src={arrow_left} alt="" /></button>
+          <button className='button' onClick={loadNextPage}><img src={arrow_right} alt="" /></button>
       </div>
 
       <PokemonList>
