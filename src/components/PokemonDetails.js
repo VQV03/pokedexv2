@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import { getPokemonImageUrl } from '../services/axios'
 import ProgressBar from "./ProgressBar";
 import Description from "./Description";
+import StrengthsWeaknesses from "./StrengthsWeaknesses";
 
 import close_icon from '../images/closeIcon.png';
 
@@ -14,7 +15,7 @@ function PokemonDetails (props) {
     const image_id = props.id
     const color = props.color
 
-    const [pokemonHeatlh, updateHealth] = useState(null)
+    const [pokemonHealth, updateHealth] = useState(null)
 
     useEffect(() => {
         updateHealth({
@@ -49,19 +50,19 @@ function PokemonDetails (props) {
                     <div className="health-data">
                         <div className="highlight">
                             <div>
-                                <p>{pokemonHeatlh?.weight}Kg</p>
+                                <p>{pokemonHealth?.weight}Kg</p>
                             </div>
                             <p className="text-label">Peso</p>
                         </div>
                         <div className="highlight">
                             <div>
-                                <p>{pokemonHeatlh?.height}m</p>
+                                <p>{pokemonHealth?.height}m</p>
                             </div>
                             <p className="text-label">Altura</p>
                         </div>
                         <div className="highlight">
                             <div>
-                                <p>{pokemonHeatlh?.abilities[0].ability.name}</p>
+                                <p>{pokemonHealth?.abilities[0].ability.name}</p>
                             </div>
                             <p className="text-label">Poder Principal</p>
                         </div>
@@ -114,6 +115,7 @@ function PokemonDetails (props) {
                                 <ProgressBar completed={pokemon?.stats[3].base_stat} />
                             </div>
                         </div>
+                      <StrengthsWeaknesses id={image_id} />
                     </div>
                 </div>
             </div>
@@ -160,6 +162,7 @@ const Modal = styled.div`
         }
 
         position: relative;
+        max-width: 800px;
         background-color: white;
         display: flex;
         border-radius: 16px;

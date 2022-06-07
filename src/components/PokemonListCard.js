@@ -17,6 +17,8 @@ function PokemonListCard(props) {
 
     const [showModal, updateModal] = useState(false) // <--
 
+    const [formatedId, getFormatedID] = useState();
+
     const id = props.url.split('/')[6]
 
     useEffect(()=>{
@@ -36,6 +38,17 @@ function PokemonListCard(props) {
 
             })
         })
+
+        function formatId (a) {
+          if (a < 10) {
+            getFormatedID(`#00${a}`);
+          } else if (a >= 10 && a < 100){
+            getFormatedID(`#0${a}`);
+          } else {
+            getFormatedID(`#${a}`);
+          }
+        }
+        formatId(id);
     },[])
 
     return(
@@ -44,7 +57,7 @@ function PokemonListCard(props) {
         <Card style={{backgroundColor: mainColor}} onClick={updateModal}>
 
             <div className="id-box">
-                <p>{pokemon.id}</p>
+                <p>{formatedId}</p>
             </div>
 
             <div className="card-details">
