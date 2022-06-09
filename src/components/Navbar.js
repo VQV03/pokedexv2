@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className='navigation'>
             <a href="/">Home</a>
             <a href="/pokemons">Pokemons</a>
-            <a href="mailto:vitorvqv@gmail.com">Contato</a>
+            <a href="https://www.linkedin.com/in/vitor-queiroz-vicente-b5b7b1237/" target='_blank' rel='noreferrer'>Contato</a>
         </div>
       </div>
     </Nav>
@@ -23,7 +23,7 @@ export default function Navbar() {
 
 const Nav = styled.nav`
   background-color: white;
-  -webkit-box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.1); 
+  -webkit-box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.1);
   box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.1);
   height: 80px;
   display: flex;
@@ -72,7 +72,7 @@ const Nav = styled.nav`
         -webkit-transition: all 0.3s ease-in-out 0s;
         transition: all 0.3s ease-in-out 0s;
       }
-    
+
       a:hover:before {
         visibility: visible;
         -webkit-transform: scaleX(1);
